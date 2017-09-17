@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'whats_going_on.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'whats_going_on_db',
+        'USER': 'RAVIN',
+        'PASSWORD': os.environ.get('DB_PASSWORD', ''),
+        'HOST': '127.0.0.1',
+        'PORT': '5432'
     }
 }
 
