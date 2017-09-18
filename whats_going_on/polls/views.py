@@ -1,5 +1,7 @@
 from django.http import HttpResponse
 
+from .models import Question, Choice, Activity
+
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return HttpResponse(str(Question.objects.all()[0]))
